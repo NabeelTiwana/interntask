@@ -140,9 +140,10 @@ class DetailPage extends StatelessWidget {
     required int replies,
   }) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CircleAvatar(
-          radius: 30,
+          radius: 25,
           backgroundImage: AssetImage('assets/images/avatar.png'),
         ),
         SizedBox(width: 16),
