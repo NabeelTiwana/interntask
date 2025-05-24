@@ -139,34 +139,45 @@ class DetailPage extends StatelessWidget {
     required int likes,
     required int replies,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        Row(
-          children: [
-            Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(width: 8),
-            Text(
-              date,
-              style: const TextStyle(color: Colors.grey, fontSize: 12),
-            ),
-          ],
+        CircleAvatar(
+          radius: 30,
+          backgroundImage: AssetImage('assets/images/avatar.png'),
         ),
-        const SizedBox(height: 8),
-        Text(comment),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            const Icon(Icons.thumb_up_outlined, size: 16),
-            const SizedBox(width: 4),
-            Text(likes.toString()),
-            const SizedBox(width: 16),
-            const Icon(Icons.thumb_down_off_alt_outlined, size: 16),
-            const SizedBox(width: 4),
-            Text(replies.toString()),
-          ],
+        SizedBox(width: 16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(width: 8),
+                  Text(
+                    date,
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Text(comment),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  const Icon(Icons.thumb_up_outlined, size: 16),
+                  const SizedBox(width: 4),
+                  Text(likes.toString()),
+                  const SizedBox(width: 16),
+                  const Icon(Icons.thumb_down_off_alt_outlined, size: 16),
+                  const SizedBox(width: 4),
+                  Text(replies.toString()),
+                ],
+              ),
+              const Divider(height: 32),
+            ],
+          ),
         ),
-        const Divider(height: 32),
       ],
     );
   }
